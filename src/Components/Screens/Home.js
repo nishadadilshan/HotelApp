@@ -2,7 +2,6 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
@@ -10,6 +9,8 @@ import Container from '@mui/material/Container';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Fade from '@mui/material/Fade';
+import { Button, ButtonGroup } from '@mui/material';
+import MiddleBox from './MiddleBox';
 
 function ScrollTop(props) {
     const { children, window } = props;
@@ -60,30 +61,21 @@ function BackToTop(props) {
     return (
         <React.Fragment>
             <CssBaseline />
-            <AppBar style={{ backgroundColor: "#8e44ad" }}>
-                <Toolbar>
-                    <Typography variant="h6" component="div">
-                        Let's have a Food
-                    </Typography>
+            <AppBar>
+                <Toolbar style={{ backgroundColor: "#8e44ad" }}>
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', '& > *': { m: 2, }, }} >
+                        <ButtonGroup variant="text" aria-label="text button group" sx={{ marginX: 10 }} >
+                            <Button style={{ color: "white" }}>About</Button>
+                            <Button style={{ color: "white" }}>Pricing</Button>
+                            <Button style={{ color: "white" }}>Learn</Button>
+                        </ButtonGroup>
+                    </Box>
                 </Toolbar>
             </AppBar>
             <Toolbar id="back-to-top-anchor" />
             <Container>
                 <Box sx={{ my: 2 }}>
-                    {/* {[...new Array(12)]
-                        .map(
-                            () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-                        )
-                        .join('\n')} */}
+
                 </Box>
             </Container>
             <ScrollTop {...props}>
@@ -103,6 +95,9 @@ function Home(props) {
     return (
         <div>
             <BackToTop />
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 50 }}>
+                <MiddleBox />
+            </div>
         </div>
     );
 }
