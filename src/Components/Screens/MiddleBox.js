@@ -92,7 +92,7 @@ const ImageMarked = styled('span')(({ theme }) => ({
 
 export default function MidlleBox() {
     return (
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '90%', alignItems: 'center', justifyContent: 'center', }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '90%', alignItems: 'center', justifyContent: 'center' }}>
             {images.map((image) => (
                 <ImageButton
                     focusRipple

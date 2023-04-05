@@ -12,6 +12,7 @@ import Fade from '@mui/material/Fade';
 import { Button, ButtonGroup } from '@mui/material';
 import MiddleBox from './MiddleBox';
 
+
 function ScrollTop(props) {
     const { children, window } = props;
     // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -89,13 +90,11 @@ function BackToTop(props) {
 
 
 
-
-
 function Home(props) {
     return (
-        <div>
+        <div style={{ width: '70%', height: 400 }}>
             <BackToTop />
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 50 }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '35vh' }}>
                 <MiddleBox />
             </div>
         </div>
